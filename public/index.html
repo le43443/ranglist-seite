@@ -8,6 +8,23 @@
 </head>
 <body>
 
+  <!-- Spielregeln Overlay -->
+  <div id="rules-overlay" class="overlay" style="display: none;">
+    <div class="overlay-content">
+      <h2>📜 Spielregeln</h2>
+      <p>
+        Willkommen beim Minigolf-Turnier!<br><br>
+        1️⃣ XXXXXXX<br>
+        2️⃣ XXXXXXX<br>
+        3️⃣ Sieger ist der Spieler mit den wenigsten Schlägen.<br>
+        4️⃣ Fairplay steht immer an erster Stelle.
+      </p>
+      <div class="overlay-buttons">
+        <button id="accept-rules" class="btn primary">Akzeptieren</button>
+      </div>
+    </div>
+  </div>
+
 <div id="login-screen" class="screen active">
   <h1>Golf Rangliste</h1>
   <input id="player-input" type="text" placeholder="Dein Name" maxlength="11" autocomplete="off" />
@@ -21,14 +38,9 @@
     <button id="logout-btn" title="Abmelden">Abmelden</button>
   </header>
 
-    <div id="finished-screen" class="screen">
-    <h2>Fertig!</h2>
-    <p>Du hast alle Bahnen ausgefüllt.</p>
-    <button id="back-to-main-btn">Zurück</button>
-    </div>
-
   <section id="score-input-section">
     <h3>Trage deine Schläge pro Bahn ein</h3>
+    <button id="show-rules-btn" class="btn small">📜 Spielregeln</button>
     <table id="score-table" aria-label="Score Eingabetabelle">
       <thead>
         <tr><th>Bahn</th><th>Schläge</th></tr>

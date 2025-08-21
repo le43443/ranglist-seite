@@ -111,7 +111,7 @@ async function fetchLeaderboard() {
 function startLeaderboardPolling() {
   if (leaderboardInterval) clearInterval(leaderboardInterval);
   fetchLeaderboard();
-  leaderboardInterval = setInterval(fetchLeaderboard, 2000); // alle 2 Sekunden
+  leaderboardInterval = setInterval(fetchLeaderboard, 1000); // alle 1 Sekunde
 }
 
 // Fertig-Bildschirm anzeigen
@@ -120,6 +120,28 @@ function showFinishedScreen() {
   // Oder du machst hier z.B. showScreen(finishedScreen);
   // Wenn du möchtest, kann ich dir den HTML-Code für finishedScreen machen.
 }
+
+const rulesOverlay = document.getElementById('rules-overlay');
+const acceptRulesBtn = document.getElementById('accept-rules');
+const showRulesBtn = document.getElementById('show-rules-btn');
+
+// Prüfen ob Regeln akzeptiert wurden
+window.addEventListener('load', () => {
+  if (!localStorage.getItem('rulesAccepted')) {
+    rulesOverlay.style.display = 'flex';
+  }
+});
+
+// Regeln akzeptieren
+acceptRulesBtn.addEventListener('click', () => {
+  localStorage.setItem('rulesAccepted', 'true');
+  rulesOverlay.style.display = 'none';
+});
+
+// Regeln jederzeit ansehen
+showRulesBtn.addEventListener('click', () => {
+  rulesOverlay.style.display = 'flex';
+});
 
 // Events
 
