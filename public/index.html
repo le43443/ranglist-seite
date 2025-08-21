@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Golf Rangliste</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+<div id="login-screen" class="screen active">
+  <h1>Golf Rangliste</h1>
+  <input id="player-input" type="text" placeholder="Dein Name" maxlength="11" autocomplete="off" />
+  <span>Nutze dein Richtigen namen</span>
+  <button id="start-btn">Start</button>
+</div>
+
+<div id="main-screen" class="screen">
+  <header>
+    <h2>Hallo, <span id="player-name"></span></h2>
+    <button id="logout-btn" title="Abmelden">Abmelden</button>
+  </header>
+
+    <div id="finished-screen" class="screen">
+    <h2>Fertig!</h2>
+    <p>Du hast alle Bahnen ausgefüllt.</p>
+    <button id="back-to-main-btn">Zurück</button>
+    </div>
+
+  <section id="score-input-section">
+    <h3>Trage deine Schläge pro Bahn ein</h3>
+    <table id="score-table" aria-label="Score Eingabetabelle">
+      <thead>
+        <tr><th>Bahn</th><th>Schläge</th></tr>
+      </thead>
+      <tbody>
+        <!-- dynamisch gefüllt -->
+      </tbody>
+    </table>
+    <button id="submit-scores-btn" class="primary-btn">Schläge absenden</button>
+  </section>
+
+  <section id="leaderboard-section">
+    <h3>Rangliste</h3>
+    <table id="leaderboard-table" aria-label="Rangliste">
+      <thead>
+        <tr><th>Platz</th><th>Name</th><th>Schläge</th></tr>
+      </thead>
+      <tbody>
+        <!-- dynamisch gefüllt -->
+      </tbody>
+    </table>
+  </section>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
